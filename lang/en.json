@@ -1,0 +1,18 @@
+{
+  "VGLOW.Settings.enableSheets.Name": "Tint actor sheets",
+  "VGLOW.Settings.enableSheets.Hint": "Tint magic item rows on pf1 character, NPC, and loot sheets, and inside container items.",
+  "VGLOW.Settings.enablePiles.Name": "Tint Item Piles",
+  "VGLOW.Settings.enablePiles.Hint": "Tint magic item rows in Item Piles windows of type pile. Merchants, vaults, and containers stay untouched.",
+  "VGLOW.Settings.colorUnidentified.Name": "Unidentified color",
+  "VGLOW.Settings.colorUnidentified.Hint": "Row tint for any unidentified item, whatever its aura.",
+  "VGLOW.Settings.colorFaint.Name": "Faint aura color",
+  "VGLOW.Settings.colorFaint.Hint": "Row tint for identified items with a faint aura, caster level 1 to 5.",
+  "VGLOW.Settings.colorModerate.Name": "Moderate aura color",
+  "VGLOW.Settings.colorModerate.Hint": "Row tint for identified items with a moderate aura, caster level 6 to 11.",
+  "VGLOW.Settings.colorStrong.Name": "Strong aura color",
+  "VGLOW.Settings.colorStrong.Hint": "Row tint for identified items with a strong aura, caster level 12 to 20.",
+  "VGLOW.Settings.colorOverwhelming.Name": "Overwhelming aura color",
+  "VGLOW.Settings.colorOverwhelming.Hint": "Row tint for identified items with an overwhelming aura, caster level 21 and above.",
+  "VGLOW.Settings.alpha.Name": "Tint opacity",
+  "VGLOW.Settings.alpha.Hint": "How strong the row tint is. Unidentified rows draw a little stronger so they stand apart from moderate."
+}

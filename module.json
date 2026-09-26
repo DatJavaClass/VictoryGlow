@@ -1,0 +1,48 @@
+{
+  "id": "victory-glow",
+  "title": "Victory Glow",
+  "description": "Tints magic item rows in Pathfinder 1e inventories by identification state and aura strength, on actor sheets, container items, and Item Piles loot piles, so unidentified loot never gets left behind.",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Victor S. (DatJavaClass)"
+    }
+  ],
+  "compatibility": {
+    "minimum": "12.343",
+    "verified": "12.343",
+    "maximum": "14"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "pf1",
+        "type": "system",
+        "compatibility": {
+          "minimum": "11"
+        }
+      }
+    ],
+    "recommends": [
+      {
+        "id": "item-piles",
+        "type": "module"
+      }
+    ]
+  },
+  "esmodules": [
+    "scripts/vglow.js"
+  ],
+  "styles": [
+    "styles/vglow.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "manifest": "https://github.com/DatJavaClass/VictoryGlow/releases/latest/download/module.json",
+  "download": "https://github.com/DatJavaClass/VictoryGlow/releases/download/v1.0.0/victory-glow-1.0.0.zip"
+}

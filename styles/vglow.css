@@ -1,0 +1,21 @@
+/* Per class color, JS rgba, alpha multiplier. */
+.vglow-unidentified { --vglow-c: var(--vglow-unidentified); --vglow-bg: var(--vglow-unidentified-bg); --vglow-k: 1.25; }
+.vglow-faint { --vglow-c: var(--vglow-faint); --vglow-bg: var(--vglow-faint-bg); --vglow-k: 1; }
+.vglow-moderate { --vglow-c: var(--vglow-moderate); --vglow-bg: var(--vglow-moderate-bg); --vglow-k: 1; }
+.vglow-strong { --vglow-c: var(--vglow-strong); --vglow-bg: var(--vglow-strong-bg); --vglow-k: 1; }
+.vglow-overwhelming { --vglow-c: var(--vglow-overwhelming); --vglow-bg: var(--vglow-overwhelming-bg); --vglow-k: 1; }
+
+/* 0,5,1 beats pf1 stripe and hover at 0,5,0. */
+.pf1 .item-list li.item[data-item-id][class*="vglow-"],
+.item-piles-app .item-piles-item-row[class*="vglow-"] {
+  background-color: var(--vglow-bg);
+  border-left: 4px solid var(--vglow-c);
+}
+
+/* color-mix where supported, rgba above otherwise. */
+@supports (background-color: color-mix(in srgb, red 50%, transparent)) {
+  .pf1 .item-list li.item[data-item-id][class*="vglow-"],
+  .item-piles-app .item-piles-item-row[class*="vglow-"] {
+    background-color: color-mix(in srgb, var(--vglow-c) calc(min(var(--vglow-alpha) * var(--vglow-k), 1) * 100%), transparent);
+  }
+}
