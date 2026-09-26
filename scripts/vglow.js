@@ -44,6 +44,7 @@ function tier(item) {
 /* One class per item, unidentified wins. */
 function classify(item) {
   if (!item?.system || !(item.isPhysical ?? (item.system.quantity !== undefined))) return null;
+  if (!(item.system.aura?.school || Number(item.system.cl) > 0)) return null; // mundane stays colorless
   if (item.system.identified === false) return 'vglow-unidentified';
   const t = tier(item);
   return t ? `vglow-${t}` : null;
