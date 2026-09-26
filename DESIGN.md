@@ -31,12 +31,12 @@ Classification runs per item and yields exactly one class, in this priority orde
 
 | Priority | Condition | Class | Default color |
 |---|---|---|---|
-| 1 | item is not identified | `vglow-unidentified` | yellow `#ffe135` |
+| 1 | magic item, not identified | `vglow-unidentified` | yellow `#ffe135` |
 | 2 | identified, aura strength faint | `vglow-faint` | green `#3cb44b` |
 | 3 | identified, aura strength moderate | `vglow-moderate` | lime `#8fbc3f` |
 | 4 | identified, aura strength strong | `vglow-strong` | amber `#e6a23c` |
 | 5 | identified, aura strength overwhelming | `vglow-overwhelming` | orange `#ff7f0e` |
-| none | identified, no aura, or not a physical item | no class | no tint |
+| none | mundane (no aura, CL 0) in any state, or not a physical item | no class | no tint |
 
 Rules that the table implies but must be stated:
 
@@ -64,7 +64,7 @@ Verify every path below against the pf1 system version installed in the world be
 
 Strength derivation, if the getter does not exist or returns nothing: caster level 1 to 5 is faint, 6 to 11 moderate, 12 to 20 strong, 21 and above overwhelming. Caster level 0 or missing with an empty aura school means no aura, no class. Prefer the system getter when it exists so VictoryGlow tracks pf1's own rule.
 
-"Magic item" for VictoryGlow means: physical item with a non empty aura school, or a caster level above zero, or the identified flag set to false. Any one of the three qualifies. Mundane identified gear has none of them and gets no class.
+"Magic item" for VictoryGlow means: physical item with a non empty aura school, or a caster level above zero. Either qualifies. The identified flag alone does not: pf1 marks gear added to NPCs as unidentified by default, and that mundane gear must stay colorless. Classification checks magic first, then identification.
 
 ## 5. Actor Sheet Surface
 
@@ -198,6 +198,7 @@ Negative:
 1. Load in a non pf1 world. Module logs one line and does nothing else. No errors.
 2. Item with `identified` missing entirely (older data). Treated as identified.
 3. Item with an aura school but CL 0. Treated as no aura unless the pf1 getter says otherwise.
+4. Mundane dagger on an NPC with identified set to false. No class, no tint.
 
 ## 12. Open Questions For The Builder
 
